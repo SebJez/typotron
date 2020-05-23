@@ -2,10 +2,6 @@
 #define IO_H
 //#include "globals.h"
 
-DDRD |= B11111100;
-DDRB |= B00000011;
-DDRB &= B11000011;
-DDRC &= B11000000; 
 
 namespace typotron{
 inline bool clockState()

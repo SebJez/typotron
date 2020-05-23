@@ -6,18 +6,18 @@
 
 namespace typotron{
 
-const char asciiToKeys
-const char keysToAscii
+//const char asciiToKeys;
+//const char keysToAscii;
 
-struct keystruct{byte key, byte modifiers};
-typedef struct keystruct keys;
+//struct keystruct{byte key, byte modifiers};
+//typedef struct keystruct keys;
 
 byte matrixToKey(byte* matrix)
 {
   for(byte i=0;i<8;i++)
   {
     byte sig = ~matrix[i];
-    for(byte j=0;j<8;j++);
+    for(byte j=0;j<8;j++)
     {
       if(sig&1)
       {
