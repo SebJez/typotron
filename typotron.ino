@@ -1,9 +1,18 @@
+//#include "globals.h"
+#include "io.h"
+#include "coder.h"
+using namespace typotron;
+
+byte inputMatrix[8];
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(9600);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+
+readToMatrix(inputMatrix);
+Serial.write(matrixToKey(inputMatrix))
+
 
 }
