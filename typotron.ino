@@ -1,4 +1,12 @@
+#define ENCODING_UNIT_TEST
+
+
+#ifdef ENCODING_UNIT_TEST
+#include "encode_decode_unit_test.h"
+#else
+
 //#include "globals.h"
+
 #include "io.h"
 #include "coder.h"
 using namespace typotron;
@@ -26,4 +34,4 @@ void loop()
 
 }
 
-//#include "encode_decode_unit_test.h"
+#endif
