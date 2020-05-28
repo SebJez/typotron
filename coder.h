@@ -60,14 +60,17 @@ void keyToMatrix(byte key, matrix_t matrix)
    *         || |    |
    *         CS byte bit  
   */
+  bool shift = (key >> 6) & 1;
+  bool code =  (key >> 7) & 1;
+  key &= 0b00111111;
  
   for(byte i=0;i<8;++i)
   {
     if((key & 0b00111000) >> 3 == i) matrix[i] = (1 << (key & 0b00000111));
     else matrix[i] = 0;
   }
-  if((key >> 6) & 1) matrix[5] |= (1 << 4); //SHIFT
-  if((key >> 7) & 1) matrix[4] |= (1 << 4); //CODE
+  if(shift) matrix[2] |= 0b00010000; //SHIFT = 024
+  if(code)  matrix[1] |= 0b00010000; //CODE = 014
 }
 
 
