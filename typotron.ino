@@ -3,21 +3,25 @@
 #include "coder.h"
 using namespace typotron;
 
-byte inputMatrix[8];
+volatile byte inputMatrix[8];
 void setup() {
-  Serial.begin(9600);
-  DDRD |= B11111100;
-  DDRB |= B00000011;
-  DDRB &= B11000011;
-  DDRC &= B11000000; 
-
-
+  Serial.begin(115200);
+  DDRD |= 0b11111100;
+  DDRB |= 0b00000011;
+  DDRB &= 0b11000011;
+  DDRC &= 0b11000000; 
+  
 }
 
-void loop() {
+void loop() 
+{
+  readToMatrix(inputMatrix);
 
-readToMatrix(inputMatrix);
-Serial.write(matrixToKey(inputMatrix));
+  bool any_key;
+  byte key = matrixToKey(inputMatrix,&any_key);
+
+  if(any_key)Serial.println(String(key,8));
+  delay(300);
 
 
 }
