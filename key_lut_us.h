@@ -1,26 +1,26 @@
 
-#ifndef KEY_LUT_LITERAL_H
-#define KEY_LUT_LITERAL_H
+#ifndef KEY_LUT_US_H
+#define KEY_LUT_US_H
 
 namespace typotron{
 
 /*
  * key -> ASCII LUT
- * literal - chars as on the typewriter keyboard
+ * us - keys as on the us keyboard
  * if a char is on KBII it can be accessed
  * by pressing CODE+key
  */
-  
-const char key_literal_lut[] PROGMEM = {   
+
+const char key_us_lut[] PROGMEM = {   
 //    NORMAL  SHIFT   CODE    KB2+SHIFT
 'n' , //000  N
 ',' , //001  ,       ?
-'-' , //002  -       /               o/
+'/' , //002  -       /               o/
 '\0', //003
 '\0', //004  margin right
 'x' , //005  X
 'v' , //006  V
-'\0' , //007  last word
+'`' , //007  last word
 
 'b' , //010  B
 'm' , //011  M
@@ -33,8 +33,8 @@ const char key_literal_lut[] PROGMEM = {
 
 'g' , //020  G
 'l' , //021  L
-';' , //022  ;       ;
-'\0' , //023  tab +           tab-
+'\'' , //022  ;       ;
+'\\' , //023  tab +           tab-
 '\0', //024
 '\0' , //025  margin left
 'd' , //026  D
@@ -42,7 +42,7 @@ const char key_literal_lut[] PROGMEM = {
 
 'f' , //030  F
 'k' , //031  K
-'\0' , //032  ij      *
+';' , //032  ij      *
 '\0' , //033  up
 'a' , //034  A
 '\0' , //035  CAPS
@@ -54,7 +54,7 @@ const char key_literal_lut[] PROGMEM = {
 'i' , //042  I
 '\0' , //043  down
 'p' , //044  P
-'\xA8' , //045  umlaut  ^
+']' , //045  umlaut  ^
 '\t' , //046  TAB
 'r' , //047  R
 
@@ -63,7 +63,7 @@ const char key_literal_lut[] PROGMEM = {
 'o' , //052  O
 '\0', //053
 '\n' , //054  ENTER
-'+', //055  +       =
+'[', //055  +       =
 'q' , //056  Q
 't' , //057  T
 
@@ -72,31 +72,31 @@ const char key_literal_lut[] PROGMEM = {
 '7' , //062  7       &               <
 '\b' , //063  BS              autortrn
 '9' , //064  9       (       dec.tab 
-'\xBD' , //065  1/2     !       hyphen
+'-' , //065  1/2     !       hyphen
 ' ' , //066  SPACE
 '3' , //067  3       Ł       i1 1/2  `
 
-'\0' , //070  margin ignore   KB1<>2
+'\e' , //070  margin ignore   KB1<>2
 '4' , //071  4       $       i2
 '6' , //072  6       _       p12
-'\r' , //073  CR
+'\b' , //073  CR
 '8' , //074  8       '       indent  >
-'\xBE' , //075  3/4     1/4     center
+'=' , //075  3/4     1/4     center
 '0' , //076  0       )       undrlne
 '2' , //077  2       "       i1      '/
 
  'N', //100  N
- '?', //101  ,       ?
- '/', //102  -       /               o/
+ '<', //101  ,       ?
+ '?', //102  -       /               o/
  '\0', //103
  '\0', //104  margin right
  'X', //105  X
  'V', //106  V
- '\0', //107  last word
+ '~', //107  last word
 
  'B', //110  B
  'M', //111  M
- '.', //112  .       .
+ '>', //112  .       .
  '\0', //113
  '\0', //114
  'Z', //115  Z
@@ -105,8 +105,8 @@ const char key_literal_lut[] PROGMEM = {
 
  'G', //120  G
  'L', //121  L
- ':', //122  ;       ;
- '\0', //123  tab +           tab-
+ '"', //122  ;       ;
+ '|', //123  tab +           tab-
 '\0', //124
  '\0', //125  margin left
 'D' , //126  D
@@ -114,7 +114,7 @@ const char key_literal_lut[] PROGMEM = {
 
 'F' , //130  F
 'K' , //131  K
-'*' , //132  ij      *
+':' , //132  ij      *
 '\0' , //133  up
 'A' , //134  A
 '\0' , //135  CAPS
@@ -126,7 +126,7 @@ const char key_literal_lut[] PROGMEM = {
 'I' , //142  I
 '\0' , //143  down
 'P' , //144  P
-'^' , //145  umlaut  ^
+'}' , //145  umlaut  ^
 '\0' , //146  TAB
 'R' , //147  R
 
@@ -135,27 +135,27 @@ const char key_literal_lut[] PROGMEM = {
 'O' , //152  O
 '\0', //153
 '\0' , //154  ENTER
-'=' , //155  +       =
+'{' , //155  +       =
 'Q' , //156  Q
 'T' , //157  T
 
-'\x83', //160  1       F               |           ***
+'!', //160  1       F               |           ***
 '%', //161  5       %       p10     degree
 '&', //162  7       &               <
 '\0', //163  BS              autortrn
 '(' , //164  9       (       dec.tab 
-'!' , //165  1/2     !       hyphen
+'_' , //165  1/2     !       hyphen
 '\0', //166  SPACE
-'\xA3' , //167  3       Ł       i1 1/2  `
+'#' , //167  3       Ł       i1 1/2  `
 
 '\0' , //170  margin ignore   KB1<>2
 '$' , //171  4       $       i2
-'_' , //172  6       _       p12
+'^' , //172  6       _       p12
 '\0' , //173  CR
-'\'' , //174  8       '       indent  >
-'\xBC' , //175  3/4     1/4     center
+'*' , //174  8       '       indent  >
+'+' , //175  3/4     1/4     center
 ')' , //176  0       )       undrlne
-'"' , //177  2       "       i1      '/
+'@' , //177  2       "       i1      '/
 
 '\x10' , //200  N
 '\0' , //201  ,       ?
@@ -198,7 +198,7 @@ const char key_literal_lut[] PROGMEM = {
 '\x09' , //242  I
 '\0' , //243  down
 '\x10' , //244  P
-'\0' , //245  umlaut  ^
+'\x1D' , //245  umlaut  ^
 '\0' , //246  TAB
 '\x12' , //247  R
 
@@ -207,31 +207,31 @@ const char key_literal_lut[] PROGMEM = {
 '\x0F' , //252  O
 '\0', //253
 '\0' , //254  ENTER
-'\0' , //255  +       =
+'\x1B' , //255  +       =
 '\x11' , //256  Q
 '\x14' , //257  T
 
-'|' , //260  1       F               |
+'\0' , //260  1       F               |
 '\0' , //261  5       %       p10     degree
-'<' , //262  7       &               <
+'\0' , //262  7       &               <
 '\0' , //263  BS              autortrn
 '\0' , //264  9       (       dec.tab 
 '\0' , //265  1/2     !       hyphen
 '\0' , //266  SPACE
-'`' , //267  3       Ł       i1 1/2  `
+'\0' , //267  3       Ł       i1 1/2  `
 
 '\0' , //270  margin ignore   KB1<>2
 '\0' , //271  4       $       i2
 '\0' , //272  6       _       p12
 '\0' , //273  CR
-'>' , //274  8       '       indent  >
+'\0' , //274  8       '       indent  >
 '\0' , //275  3/4     1/4     center
 '\0' , //276  0       )       undrlne
-'\xB4' , //277  2       "       i1      '/
+'\0' , //277  2       "       i1      '/
 
- '\0' , //300  N
+'\0' , //300  N
  '\0', //301  ,       ?
- '\0', //302  -       /               o/
+ '\x1F', //302  -       /               o/
  '\0', //303
  '\0', //304  margin right
  '\0', //305  X
@@ -288,13 +288,13 @@ const char key_literal_lut[] PROGMEM = {
  '\0', //362  7       &               <
  '\0', //363  BS              autortrn
  '\0', //364  9       (       dec.tab 
- '\0', //365  1/2     !       hyphen
+ '\x1F', //365  1/2     !       hyphen
  '\0', //366  SPACE
  '\0', //367  3       Ł       i1 1/2  `
  
  '\0', //370  margin ignore   KB1<>2
  '\0', //371  4       $       i2
- '\0', //372  6       _       p12
+ '\x1E', //372  6       _       p12
  '\0', //373  CR
  '\0', //374  8       '       indent  >
  '\0', //375  3/4     1/4     center
@@ -302,6 +302,6 @@ const char key_literal_lut[] PROGMEM = {
  '\0'  //377  2       "       i1      '/
  };
 
-inline char keyToAsciiLiteral(byte key) {return pgm_read_byte_near(key_literal_lut+key);}
+inline char keyToAsciiUs(byte key) {return pgm_read_byte_near(key_us_lut+key);}
 }//namespace
 #endif

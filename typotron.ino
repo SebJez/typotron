@@ -9,7 +9,8 @@
 
 #include "io.h"
 #include "coder.h"
-#include "key_lut_literal.h"
+//#include "key_lut_literal.h"
+#include "key_lut_us.h"
 using namespace typotron;
 
 volatile byte inputMatrix[8];
@@ -36,7 +37,7 @@ void loop()
 
   if(any_key) 
   {
-    if(!prev_any_key || prev_key != key) Serial.print(keyToAsciiLiteral(key));
+    if(!prev_any_key || prev_key != key) Serial.print(keyToAsciiUs(key));
   }
 
   prev_key = key;
