@@ -11,10 +11,6 @@ namespace typotron{
 byte matrixToKey(matrix_t matrix,bool* key_pressed_flag)
 {
   /*
-   * *key_pressed_flag is set to true if any key EXCEPT SHIFT AND CODE is pressed
-  */
-
-  /*
    * ENCODING:
    * key = 0b00 000  000
    *         || |    |
@@ -23,7 +19,6 @@ byte matrixToKey(matrix_t matrix,bool* key_pressed_flag)
   bool shift = false;
   bool code = false;
   byte key = 000;
-  byte normal_key_pressed = false; //not SHIFT or CODE
   for(byte i=0;i<8;i++)
   { 
     byte matrix_byte = matrix[i];
@@ -32,20 +27,17 @@ byte matrixToKey(matrix_t matrix,bool* key_pressed_flag)
     {
        if ((matrix_byte >> j)&1)
        {
-        if(i==1 && j==4) code = true;
-        else if(i==2 && j==4) shift = true;
-        else
-        {
-          key = (i << 3) | j;
-          normal_key_pressed = true;
-        }
+        *key_pressed_flag = true;
+        if(i==1 && j==7) code = true;
+        else if(i==2 && j==7) shift = true;
+        else key = (i << 3) | j;
+
        }
        
     }
   }
   if(shift) key |= 0b01000000;
-  if(code)  key |= 0b10000000;
-  *key_pressed_flag = normal_key_pressed; 
+  if(code)  key |= 0b10000000; 
   return key;
 }
 
